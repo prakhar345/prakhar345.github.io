@@ -1,8 +1,51 @@
 ---
 layout:            post
-title:             "This post demonstrates post content styles"
-menutitle:         "Content styles"
-category:          Features
-author:            jwillmer
-tags:              Jekyll Content Demo
+title:             "Why there is a need to shift to Linux?"
+menutitle:         "Why Linux?"
+author:            Prakhar Mathur
+tags:              
 ---
+
+Users are often faced with the dilemma of switching to Linux from Windows, with
+
+Windows already providing a multitude of functionalities and being quite easy. But
+
+some features of Linux make it stand out and programmers’ favorite.
+
+ Though Linux will not help in developing Windows applications, but it is always
+
+preferable to use Linux while developing cross-platform applications and web services.
+
+ In many cases when website and mobile app backends fail to run on Windows. In such
+
+cases, Linux comes to our rescue. Setting up the test environment in Windows does not
+
+help either as it does not even replicate the live environment.
+
+ Linux is an open-source project, making the source code of Linux OS available to the
+
+users to understand its working, make changes according to the requirements, or add
+
+functionalities.
+
+ The security of Linux cannot be questioned neither be breached. It does not require
+
+downloading and installation of antiviruses like Windows to keep the computer safe
+
+from malware.
+
+ For developers, Linux Terminal outdoes Windows command line. Many libraries are
+
+native to Linux. Also, programmers find package manager on Linux a useful tool for easy
+
+completion of tasks.
+
+ Bash Scripting in Linux is also one of the reasons of Linux being programmers’ preferred
+
+choice.
+
+ Native support for SSH in Linux helps in easy and quick management of servers. Features
+
+like apt-get commands and others is also a reason for preference of Linux over
+
+Windows.
