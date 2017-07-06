@@ -1,0 +1,74 @@
+---
+layout:            post
+title:             "Why there is a need to shift to Linux?"
+menutitle:         "Why Linux?"
+author:            Prakhar Mathur
+tags:              
+---
+
+Users are often faced with the dilemma of switching to Linux from Windows, with
+Windows already providing a multitude of functionalities and being quite easy. But
+some features of Linux make it stand out and programmers’ favourite. Though Linux will not help in developing Windows applications, but it is always preferable to use Linux while developing cross-platform applications and web services.
+
+In many cases website and mobile app backends fail to run on Windows, in such
+cases, Linux comes to our rescue. Setting up the test environment in Windows does not help either as it does not even replicate the live environment.
+
+Linux is an open-source project, making the source code of Linux OS available to the
+users to understand its working, make changes according to the requirements, or add functionalities. The security of Linux cannot be questioned neither be breached. It does not require downloading and installation of anti viruses like Windows to keep the computer safe from malware.
+
+For developers, Linux Terminal outdoes Windows command line. Many libraries are
+native to Linux. Also, programmers find package manager on Linux a useful tool for easy completion of tasks. Bash Scripting in Linux is also one of the reasons of Linux being programmers’ preferred choice. Native support for SSH in Linux helps in easy and quick management of servers. Features like apt-get commands and others is also a reason for preference of Linux over Windows.
+
+Linux being an open source and widely used OS, will not require any expert help if you get stuck with a problem. Search a similar thread on web or post the problem on of the many forums of Linux and you will get a solution with detailed explanations within minutes from the numerous users, solving your problem free of cost.
+
+Not just that, Linux provides you with the best suites of low level tools; awk, piping
+output, sed, stderr, grep to name a few. Linux is open to experimentation, letting the developers build command line tools. Local config and build manager in Linux prove to be quite useful while checking all the trunks in the repository. It runs on a couple of lines of shell, not requiring any further interaction with the user and takes 1/10 th time as compared to Windows.
+
+A great advantage of Linux over Windows is that it could be used on any hardware
+ranging from mobile phones to supercomputers. Linux being an open source kernel and software, allows portability to another architecture by a third party if the existing
+developer see no need. The underlying hardware is not a thing to be cared about by the end user.
+
+The Command Line Interface (CLI) has a more powerful metaphor: pipes. Because data flows through these metaphorical pipes. But a CLI program, does not just causes data to flow, it has the ability and functionality to process and change streams of data as it outputs it to the next pipe. Want to search a document? Use Grep. Email? Mailx. 
+
+ Search for something and send through email?
+
+ `grep SOMETHING SOMEFILE | mailx -s
+SOME_SUBJECT SOME_DUDE_EMAIL.`	 
+
+Want email in caps?
+
+ `grep SOMETHING SOMEFILE | tr &#39;[:lower:]&#39; &#39;[:upper:]&#39; | mailx -s SOME_SUBJECT SOME_DUDE_EMAIL`
+
+ 
+Most of the extra tools required in Linux are freely available, either already installed or search in Synaptic or Yum equivalent and subsequently downloading them is a quick job. To search any given directory and return the name of the newest file in that directory,the Linux command line needs just a single line:
+
+ `ls -t /path/to/dir | head -n1` 
+
+Whereas you will need to write an entire program in any other language. The command line’s first half commands to list the directory and sort it according to the time. This is then ‘piped’ to another command line utility, ‘head’ which picks the top most part() of the list or stream it receives. 
+
+By default, ‘head’ shows top 5 lines by default, hence, -n1 to ‘show me only the first’.
+There are other examples where Linux can turn a dull time consuming work to a single command line. Searching the attempt log, finding invalid connections and then adding them to iptables program would require just a single command line in Linux using pipes and some utility tools : 
+
+`cat /path/to/log/file |grep Invalid |awk &#39;{print $10}&#39;|uniq |xargs -I &quot;replaceme&quot; iptables -I INPUT -s &quot;replaceme&quot; -j DROP`
+
+A simple combination of shell commands, pipes, awk, sed and grep can prove to be
+extremely useful to achieve a lot of things, for example, Latest 10 files is 
+
+`ls -lrt |tail`
+
+Remove files older than 10 days is  
+`find . -m +10 | xargs -i rm -f {}`
+
+ Move all the log files in current directory to backup
+
+`for i in *.log; do; mv $i backup/`
+
+We can control hardware just from manipulating them with an &quot;echo&quot; command, or read with just a &quot;cat&quot;, for example, to send UDP/TCP  Packet from command line:  
+
+`echo “hello” &gt; /dev/tcp/192.168.2.101/58549 echo “hello” &gt; /dev/udp/192.168.2.101/58549`
+
+In Linux, this requires just the bash shell and no line of code whereas in windows you
+need to use Socket API in the programming language, compile it, run it, and when any change is required, it is needed to be repeated again.  Most servers use Linux and keeping your development environment as similar to the setup as possible is really helpful.
+
+Conf files provide a huge control, changing desktop environment, rewriting Linux kernel,removing GUI, automating stuff, Windows registry, all become an easy job. Using command lines, experimenting and breaking the system is fun and feels superior. Linux Kernel is the most powerful OS Kernel in the world, designed to be used on mobile phones to supercomputers, handling giant memories and innumerous tasks. Giant companies like Bell Labs, Sun, IBM, and Oracle with some of the largest researches and developments on computings work on Linux. This is the reason of Linux having the best algorithms developed by the best developers. Thus, to code in the best environment, with best possible tools, Linux is the best choice.
+
