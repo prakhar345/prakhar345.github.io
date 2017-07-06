@@ -6,69 +6,16 @@ author:            Prakhar Mathur
 tags:              
 ---
 
-Users are often faced with the dilemma of switching to Linux from Windows, with
-Windows already providing a multitude of functionalities and being quite easy. But
-some features of Linux make it stand out and programmers’ favourite. Though Linux will not help in developing Windows applications, but it is always preferable to use Linux while developing cross-platform applications and web services.
+Test Driven Development is an approach for software development using which we need to write tests before the implementation of a particular module. This arises a lot of questions like why to write test first before even knowing what will be the implementation and how can any one know the design of the project before hand. I will try and address these questions in the article to the best of my knowledge.
 
-In many cases website and mobile app backends fail to run on Windows, in such
-cases, Linux comes to our rescue. Setting up the test environment in Windows does not help either as it does not even replicate the live environment.
+So, the core idea behind TDD is to know about the specifications first and then implement them. If we know the specifications then we can write tests for them and then we can implement the function according to the requirement of the specification. We all face the problem of a mismatch between the expected behaviour of the application and the resulting behaviour due to our code. TDD can help us a lot in solving this problem via testing every single possible module of our code, thus making sure that it performs the way we intended it to and handles all the corner cases.
 
-Linux is an open-source project, making the source code of Linux OS available to the
-users to understand its working, make changes according to the requirements, or add functionalities. The security of Linux cannot be questioned neither be breached. It does not require downloading and installation of anti viruses like Windows to keep the computer safe from malware.
+Now the question arises that why we need to test each and every single module that doesn’t even seem to be relavent enough? There is a famous story of a ship that drowned because of a malfunction of a very small unit which was neglected by all, the crew tested every unit except the one that lead to the sinking of the ship. Similarly each and every small module of our code can create a huge impact on the behaviour of our code. But why do we need small modules to test ? What’s the problem in testing bigger modules?  The reason behind testing small modules is cognitive overload. We cannot compute the whole code in our brain. If we were able to do so then there was no need of computer at all but as we can’t process the the whole code at once we need help of automation. When a module gets broken we look at which tests are failing and we can refactor that code easily as we can process it in our brain since our brain can easily calculate the output of a single line of code instead of processing complex code.
 
-For developers, Linux Terminal outdoes Windows command line. Many libraries are
-native to Linux. Also, programmers find package manager on Linux a useful tool for easy completion of tasks. Bash Scripting in Linux is also one of the reasons of Linux being programmers’ preferred choice. Native support for SSH in Linux helps in easy and quick management of servers. Features like apt-get commands and others is also a reason for preference of Linux over Windows.
+Softwares developed using TDD have much better design as we need to test everything, we will modularise our code accordingly, also it will have lesser duplication and fewer edge cases that are not thought through.
 
-Linux being an open source and widely used OS, will not require any expert help if you get stuck with a problem. Search a similar thread on web or post the problem on of the many forums of Linux and you will get a solution with detailed explanations within minutes from the numerous users, solving your problem free of cost.
+Methodology of TDD is simple, all you need to is follow a cycle i.e. Red, Green, Commit, Refactor, Commit. Red means you need to fail the test first i.e. you will write the test so as to clear the specification but you will not implement the function so the test will fail. Green means to pass the test with simple most code which just doesn’t break the contract then we will commit the code. After this we refactor the code in the best possible way and ensuring that the contract is still not broken and on passing the test we commit the final code.
 
-Not just that, Linux provides you with the best suites of low level tools; awk, piping
-output, sed, stderr, grep to name a few. Linux is open to experimentation, letting the developers build command line tools. Local config and build manager in Linux prove to be quite useful while checking all the trunks in the repository. It runs on a couple of lines of shell, not requiring any further interaction with the user and takes 1/10 th time as compared to Windows.
+Hopefully now you have a better idea about why we use test driven development as it is evident that it is one of the best ways to make our code maintainable, reusable and non resistant to change.
 
-A great advantage of Linux over Windows is that it could be used on any hardware
-ranging from mobile phones to supercomputers. Linux being an open source kernel and software, allows portability to another architecture by a third party if the existing
-developer see no need. The underlying hardware is not a thing to be cared about by the end user.
-
-The Command Line Interface (CLI) has a more powerful metaphor: pipes. Because data flows through these metaphorical pipes. But a CLI program, does not just causes data to flow, it has the ability and functionality to process and change streams of data as it outputs it to the next pipe. Want to search a document? Use Grep. Email? Mailx. 
-
- Search for something and send through email?
-
- `grep SOMETHING SOMEFILE | mailx -s
-SOME_SUBJECT SOME_DUDE_EMAIL.`	 
-
-Want email in caps?
-
- `grep SOMETHING SOMEFILE | tr &#39;[:lower:]&#39; &#39;[:upper:]&#39; | mailx -s SOME_SUBJECT SOME_DUDE_EMAIL`
-
- 
-Most of the extra tools required in Linux are freely available, either already installed or search in Synaptic or Yum equivalent and subsequently downloading them is a quick job. To search any given directory and return the name of the newest file in that directory,the Linux command line needs just a single line:
-
- `ls -t /path/to/dir | head -n1` 
-
-Whereas you will need to write an entire program in any other language. The command line’s first half commands to list the directory and sort it according to the time. This is then ‘piped’ to another command line utility, ‘head’ which picks the top most part() of the list or stream it receives. 
-
-By default, ‘head’ shows top 5 lines by default, hence, -n1 to ‘show me only the first’.
-There are other examples where Linux can turn a dull time consuming work to a single command line. Searching the attempt log, finding invalid connections and then adding them to iptables program would require just a single command line in Linux using pipes and some utility tools : 
-
-`cat /path/to/log/file |grep Invalid |awk &#39;{print $10}&#39;|uniq |xargs -I &quot;replaceme&quot; iptables -I INPUT -s &quot;replaceme&quot; -j DROP`
-
-A simple combination of shell commands, pipes, awk, sed and grep can prove to be
-extremely useful to achieve a lot of things, for example, Latest 10 files is 
-
-`ls -lrt |tail`
-
-Remove files older than 10 days is  
-`find . -m +10 | xargs -i rm -f {}`
-
- Move all the log files in current directory to backup
-
-`for i in *.log; do; mv $i backup/`
-
-We can control hardware just from manipulating them with an &quot;echo&quot; command, or read with just a &quot;cat&quot;, for example, to send UDP/TCP  Packet from command line:  
-
-`echo “hello” &gt; /dev/tcp/192.168.2.101/58549 echo “hello” &gt; /dev/udp/192.168.2.101/58549`
-
-In Linux, this requires just the bash shell and no line of code whereas in windows you
-need to use Socket API in the programming language, compile it, run it, and when any change is required, it is needed to be repeated again.  Most servers use Linux and keeping your development environment as similar to the setup as possible is really helpful.
-
-Conf files provide a huge control, changing desktop environment, rewriting Linux kernel,removing GUI, automating stuff, Windows registry, all become an easy job. Using command lines, experimenting and breaking the system is fun and feels superior. Linux Kernel is the most powerful OS Kernel in the world, designed to be used on mobile phones to supercomputers, handling giant memories and innumerous tasks. Giant companies like Bell Labs, Sun, IBM, and Oracle with some of the largest researches and developments on computings work on Linux. This is the reason of Linux having the best algorithms developed by the best developers. Thus, to code in the best environment, with best possible tools, Linux is the best choice.
-
+Best of luck.
